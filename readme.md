@@ -1,0 +1,1 @@
+![mfe archtecture](./docs/mfe-architecture.drawio.png)

@@ -27,7 +27,7 @@ export class NewsService {
       .then(({ coords }) => {
         this.httpClient
           .get(
-            `https://api.worldnewsapi.com/search-news?language=pt&location-filter=${coords.latitude},${coords.longitude},50&api-key=301b76952be84db8b6c1c80c52af4dd9`
+            `https://api.worldnewsapi.com/search-news?language=pt&location-filter=${coords.latitude},${coords.longitude},50&api-key=ccd3c1a626d5498ea76144bef3cefb58`
           )
           .subscribe({
             next: (response: any) => {
