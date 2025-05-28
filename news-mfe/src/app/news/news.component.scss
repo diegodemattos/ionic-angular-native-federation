@@ -1,11 +1,13 @@
 .news-list {
   width: 100%;
-  min-height: 100%;
+  height: 100%;
+  scroll-behavior: auto;
   margin: auto;
   display: grid;
   gap: 24px;
   background-color: #f4f4f4;
   padding: 20px;
+  overflow-y: scroll;
 
   section {
     display: flex;
@@ -45,14 +47,7 @@
       .news-title {
         font-size: 1.25rem;
         margin: 0 0 8px;
-
-        a {
-          color: #333;
-
-          &:hover {
-            color: #007BFF;
-          }
-        }
+        color: #333;
       }
 
       .news-summary {
