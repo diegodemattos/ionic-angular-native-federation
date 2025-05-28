@@ -1,5 +1,5 @@
 {
-  "news-mfe": "http://localhost:4201/remoteEntry.json",
-	"weather-mfe": "http://localhost:4202/remoteEntry.json",
-	"app-mfe": "http://localhost:4203/remoteEntry.json"
+   "news-mfe": "https://lustrous-marzipan-a737e3.netlify.app/remoteEntry.json",
+	"weather-mfe": "https://grand-zabaione-86de14.netlify.app/remoteEntry.json",
+	"app-mfe": "https://prismatic-madeleine-635b69.netlify.app/remoteEntry.json"
 }
