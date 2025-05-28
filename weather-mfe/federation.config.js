@@ -5,7 +5,7 @@ module.exports = withNativeFederation({
   name: 'weather-mfe',
 
   exposes: {
-    './Component': './src/app/app.component.ts',
+    './WeatherModule': './src/app/weather/weather.module.ts',
   },
 
   shared: {
@@ -22,5 +22,5 @@ module.exports = withNativeFederation({
 
   // Please read our FAQ about sharing libs:
   // https://shorturl.at/jmzH0
-  
+
 });

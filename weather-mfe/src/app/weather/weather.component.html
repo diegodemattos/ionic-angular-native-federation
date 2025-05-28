@@ -1,0 +1,57 @@
+<main
+  class="weather-data"
+  *ngIf="{
+    state: state$ | async
+  } as data"
+>
+  <header>
+    <h1>Current Weather</h1>
+    <p>
+      Location: <strong>{{ data.state?.weather?.location }}</strong>
+    </p>
+    <p>
+      Local Time:
+      <time datetime="2025-05-28T15:08">{{
+        data.state?.weather?.time | date : "dd/MM/yyyy HH:mm"
+      }}</time>
+    </p>
+  </header>
+
+  <section class="weather-summary">
+    <img [src]="data.state?.weather?.conditionIcon" alt="Light showers" />
+    <p class="condition">
+      Condition: <strong>{{ data.state?.weather?.condition }}</strong>
+    </p>
+    <p class="temp">
+      Temperature: <strong>{{ data.state?.weather?.temperature }}°C</strong>
+    </p>
+    <p>
+      Feels Like: <strong>{{ data.state?.weather?.feelsLike }}°C</strong>
+    </p>
+    <p>
+      UV Index: <strong>{{ data.state?.weather?.uvIndex }}</strong>
+    </p>
+  </section>
+
+  <section class="details">
+    <h2>Details</h2>
+    <ul>
+      <li>Wind: {{ data.state?.weather?.wind }} km/h</li>
+      <li>Pressure: {{ data.state?.weather?.pressure }} mb</li>
+      <li>Precipitation: {{ data.state?.weather?.precipitation }} mm</li>
+      <li>Humidity: {{ data.state?.weather?.humidity }}%</li>
+      <li>Cloud Cover: {{ data.state?.weather?.cloudCover }}%</li>
+      <li>Dew Point: {{ data.state?.weather?.dewPoint }}°C</li>
+      <li>Heat Index: {{ data.state?.weather?.heatIndex }}°C</li>
+      <li>Visibility: {{ data.state?.weather?.visibiity }} km</li>
+      <li>
+        Last Updated:
+        <time>{{
+          data.state?.weather?.lastUpdated | date : "dd/MM/yyyy HH:mm"
+        }}</time>
+      </li>
+      <li>Time Zone: {{ data.state?.weather?.timeZone }}</li>
+      <li>Coordinates: {{ data.state?.weather?.coordinates }}</li>
+    </ul>
+  </section>
+</main>

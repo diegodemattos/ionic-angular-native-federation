@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
+import { WeatherComponent } from './weather.component';
 
 export const routes: Routes = [
   {
     path: '',
-    loadChildren: () =>
-      import('./weather/weather.module').then((m) => m.WeatherModule),
+    component: WeatherComponent,
   },
 ];
