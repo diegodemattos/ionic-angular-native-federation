@@ -8,8 +8,6 @@
   background-color: #f4f4f4;
   padding: 20px;
   overflow-y: scroll;
-  padding-top: calc(env(safe-area-inset-top) + 20px);
-  padding-bottom: calc(env(safe-area-inset-bottom) + 20px);
 
   section {
     display: flex;

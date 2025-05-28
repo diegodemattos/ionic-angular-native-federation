@@ -7,8 +7,6 @@ main {
   justify-content: center;
   padding: 20px;
   background-color: #f0f4f8;
-  padding-top: calc(env(safe-area-inset-top) + 20px);
-  padding-bottom: calc(env(safe-area-inset-bottom) + 20px);
 
   button {
     width: 100%;
