@@ -2,7 +2,7 @@ const { withNativeFederation, shareAll } = require('@angular-architects/native-f
 
 module.exports = withNativeFederation({
 
-  ame: 'app-mfe',
+  name: 'app-mfe',
 
   exposes: {
     './AppMenuModule': './src/app/app-menu/app-menu.module.ts',
