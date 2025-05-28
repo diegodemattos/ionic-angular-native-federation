@@ -1,0 +1,19 @@
+<main class="news-list" *ngIf="{
+  state: state$ | async
+} as data">
+  <section aria-label="News List">
+    <article class="news-item" *ngFor="let news of data.state?.news" (click)="navigateToNews(news.url)">
+      <figure #figure class="news-image">
+        <img [src]="news.image" alt="News Image" (load)="showImage(figure)">
+      </figure>
+      <div class="news-content">
+        <h2 class="news-title">
+          {{ news.title }}
+        </h2>
+        <p class="news-summary">
+          {{ news.summary }}
+        </p>
+      </div>
+    </article>
+  </section>
+</main>
