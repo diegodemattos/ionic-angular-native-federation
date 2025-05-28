@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { NewsService } from './news.service';
 import { Observable } from 'rxjs';
-import { NewsState } from './news.interface';
+import { News, NewsState } from './news.interface';
 import { CommonModule } from '@angular/common';
+import { Share } from '@capacitor/share';
 
 @Component({
   selector: 'app-news',
@@ -27,5 +28,13 @@ export class NewsComponent {
 
   navigateToNews(url: string) {
     window.open(url, '_blank');
+  }
+
+  share(news: News) {
+    Share.share({
+      title: news.title,
+      text: news.summary,
+      url: news.url,
+    });
   }
 }

@@ -5,11 +5,7 @@
   } as data"
 >
   <section aria-label="News List">
-    <article
-      class="news-item"
-      *ngFor="let news of data.state?.news"
-      (click)="navigateToNews(news.url)"
-    >
+    <article class="news-item" *ngFor="let news of data.state?.news">
       <figure #figure class="news-image">
         <img [src]="news.image" alt="News Image" (load)="showImage(figure)" />
       </figure>
@@ -17,6 +13,10 @@
         <h2 class="news-title" [innerHTML]="news.title"></h2>
         <p class="news-summary" [innerHTML]="news.summary"></p>
       </div>
+      <nav class="news-options">
+        <button (click)="navigateToNews(news.url)" class="navigate">Go To News</button>
+        <button (click)="share(news)" class="share">Share News</button>
+      </nav>
     </article>
   </section>
 </main>

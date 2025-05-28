@@ -60,5 +60,26 @@
         line-height: 1.5;
       }
     }
+    .news-options {
+      padding: 0 16px 16px;
+      button {
+        border: 0;
+        width: 100%;
+        padding: 15px;
+        border-radius: 5px;
+        font-size: 1rem;
+        font-weight: bold;
+        color: #fff;
+        &:not(:first-child) {
+          margin-top: 8px;
+        }
+        &.navigate {
+          background-color: #198754;
+        }
+        &.share {
+          background-color: #0d6efd;
+        }
+      }
+    }
   }
 }
