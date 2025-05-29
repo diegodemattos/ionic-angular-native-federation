@@ -9,5 +9,5 @@ App Menu MFE: https://prismatic-madeleine-635b69.netlify.app/remoteEntry.json<br
 
 Mobile Application:
 
-Ionic Mobile Application: [https://github.com/diegodemattos/ionic-angular-native-federation/blob/main/artifacts/app.apk)](./artifacts/app.apk)
+Ionic Mobile Application: [https://github.com/diegodemattos/ionic-angular-native-federation/blob/main/artifacts/app.apk](./artifacts/app.apk)
 
