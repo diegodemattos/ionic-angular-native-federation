@@ -13,14 +13,14 @@ import {
   IonHeader,
   IonTitle,
   IonToolbar,
-  IonBackButton,
-} from '@ionic/angular/standalone';
+  IonBackButton, IonSpinner } from '@ionic/angular/standalone';
+import { delay } from 'rxjs';
 
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.scss'],
-  imports: [
+  imports: [IonSpinner,
     CommonModule,
     NgIf,
     IonHeader,
@@ -34,6 +34,7 @@ import {
     IonCardSubtitle,
     IonCardContent,
     IonBackButton,
+    IonSpinner
   ],
 })
 export class DetailsComponent {

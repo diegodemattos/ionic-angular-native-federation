@@ -1,7 +1,10 @@
 import { NgFor, NgIf } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import {
+  IonBackButton,
+  IonButtons,
   IonContent,
   IonHeader,
   IonItem,
@@ -13,10 +16,12 @@ import {
   IonToolbar,
   NavController,
 } from '@ionic/angular/standalone';
+import { delay } from 'rxjs';
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
+  styleUrls: ['./list.component.scss'],
   imports: [
     NgIf,
     NgFor,
@@ -28,13 +33,13 @@ import {
     IonItem,
     IonThumbnail,
     IonSpinner,
-    IonLabel,
+    IonLabel
   ],
 })
 export class ListComponent {
-  countries: any = [];
+  countries: any;
 
-  constructor(private http: HttpClient, private navCtrl: NavController) {}
+  constructor(private http: HttpClient, private navCtrl: NavController, private route: ActivatedRoute) {}
 
   ionViewWillEnter() {
     this.http.get('https://restcountries.com/v3.1/all').subscribe({
@@ -45,6 +50,10 @@ export class ListComponent {
   }
 
   goToDetails(country: any) {
-    this.navCtrl.navigateForward(['details', country.cca3]); // usando código ISO como param
+    this.navCtrl.navigateForward(['../details', country.cca3],
+      {
+        relativeTo: this.route
+      }
+    ); // usando código ISO como param
   }
 }

@@ -3,23 +3,26 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
-    <ion-title>Detalhes do País</ion-title>
+    <ion-title>Country Details</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content *ngIf="country">
-  <ion-card>
-    <img [src]="country.flags?.png" alt="Flag" />
+<ion-content>
+  <ion-card *ngIf="country">
+    <img class="image"  [src]="country.flags?.png" alt="Flag" />
     <ion-card-header>
       <ion-card-title>{{ country.name.common }}</ion-card-title>
-      <ion-card-subtitle>{{ country.region }}</ion-card-subtitle>
+      <ion-card-subtitle>Region: {{ country.region }}</ion-card-subtitle>
     </ion-card-header>
 
     <ion-card-content>
       <p><strong>Capital:</strong> {{ country.capital?.[0] }}</p>
-      <p><strong>População:</strong> {{ country.population | number }}</p>
-      <p><strong>Moeda:</strong> {{ currency }}</p>
-      <p><strong>Idioma:</strong> {{ language }}</p>
+      <p><strong>Population:</strong> {{ country.population | number }}</p>
+      <p><strong>Currency:</strong> {{ currency }}</p>
+      <p><strong>Language:</strong> {{ language }}</p>
     </ion-card-content>
   </ion-card>
+  <div class="loader" *ngIf="!country">
+    <ion-spinner name="crescent" class="spinner-center"></ion-spinner>
+  </div>
 </ion-content>

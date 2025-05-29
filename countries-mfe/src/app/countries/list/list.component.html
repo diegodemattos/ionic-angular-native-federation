@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Lista de Países</ion-title>
+    <ion-title>Country List</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -8,21 +8,16 @@
   <ion-list *ngIf="countries">
     <ion-item *ngFor="let country of countries" (click)="goToDetails(country)">
       <ion-thumbnail slot="start">
-        <img
-          [src]="country.flags?.png"
-          alt="Flag of {{ country.name.common }}"
-        />
+        <img [src]="country.flags?.png" alt="Flag of {{ country.name.common }}">
       </ion-thumbnail>
       <ion-label>
         <h2>{{ country.name.common }}</h2>
-        <p>{{ country.capital?.[0] }}</p>
+        <p>Capital: {{ country.capital?.[0] }}</p>
       </ion-label>
     </ion-item>
   </ion-list>
 
-  <ion-spinner
-    *ngIf="!countries"
-    name="crescent"
-    class="spinner-center"
-  ></ion-spinner>
+  <div class="loader" *ngIf="!countries">
+    <ion-spinner name="crescent" class="spinner-center"></ion-spinner>
+  </div>
 </ion-content>
