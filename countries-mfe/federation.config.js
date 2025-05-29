@@ -18,6 +18,7 @@ module.exports = withNativeFederation({
     'rxjs/testing',
     'rxjs/webSocket',
     // Add further packages you don't need at runtime
+    p => p.startsWith('ionicon')
   ]
 
   // Please read our FAQ about sharing libs:

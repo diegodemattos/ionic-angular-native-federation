@@ -8,7 +8,7 @@ export const routes: Routes = [
     component: ListComponent,
   },
   {
-    path: 'details',
+    path: 'details/:id',
     component: DetailsComponent,
   },
   { path: '', redirectTo: 'list', pathMatch: 'full' },
