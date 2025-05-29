@@ -21,4 +21,11 @@ export const routes: Routes = [
         (m) => m.NewsModule
       ),
   },
+  {
+    path: 'countries',
+    loadChildren: () =>
+      loadRemoteModule('countries-mfe', './CountriesModule').then(
+        (m) => m.CountriesModule
+      ),
+  },
 ];

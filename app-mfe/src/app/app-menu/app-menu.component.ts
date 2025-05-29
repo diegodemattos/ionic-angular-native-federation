@@ -16,4 +16,8 @@ export class AppMenuComponent {
   goToWeather() {
     this.router.navigate(['/weather']);
   }
+
+  goToCoutries() {
+    this.router.navigate(['/countries']);
+  }
 }
