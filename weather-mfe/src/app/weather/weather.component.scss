@@ -3,8 +3,8 @@ main {
   height: 100%;
   margin: auto;
   padding: 20px;
-  background-color: #f0f4f8;
-  color: #333;
+  background-color: #121212;
+  color: #fff;
   overflow-y: scroll;
 }
 
@@ -20,6 +20,9 @@ header {
   margin-bottom: 1rem;
   h1 {
     margin-bottom: 20px;
+  }
+  p {
+    color: #a0a0a0;
   }
   p:not(:last-child) {
     margin-bottom: 10px;
@@ -53,7 +56,8 @@ header {
 
 .details li {
   padding: 0.4rem 0;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #a0a0a0;
+  color: #a0a0a0;
 }
 
 .loader-container, .error-container {
@@ -64,6 +68,7 @@ header {
   min-height: 100%;
   width: 100%;
   font-size: 1.1rem;
+  flex: 1;
 }
 
 .spinner {

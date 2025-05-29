@@ -25,7 +25,6 @@ export class WeatherService {
     });
     Geolocation.getCurrentPosition()
       .then(({ coords }) => {
-        console.log(coords);
         this.httpClient
           .get(
             `https://api.weatherapi.com/v1/current.json?key=e587043fdd174c4fa0b180415252805&q=${coords.latitude},${coords.longitude}&lang=pt`

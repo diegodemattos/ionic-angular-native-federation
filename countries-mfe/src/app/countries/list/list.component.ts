@@ -33,7 +33,9 @@ import { delay } from 'rxjs';
     IonItem,
     IonThumbnail,
     IonSpinner,
-    IonLabel
+    IonLabel,
+    IonButtons,
+    IonBackButton
   ],
 })
 export class ListComponent {

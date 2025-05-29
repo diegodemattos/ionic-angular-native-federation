@@ -5,9 +5,10 @@
   margin: auto;
   display: grid;
   gap: 24px;
-  background-color: #f4f4f4;
+  background-color: #121212;
   padding: 20px;
   overflow-y: scroll;
+  color: #fff;
 
   section {
     display: flex;
@@ -16,7 +17,7 @@
   }
 
   .news-item {
-    background-color: #fff;
+    background-color: #1e1e1e;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -47,11 +48,11 @@
       .news-title {
         font-size: 1.25rem;
         margin: 0 0 8px;
-        color: #333;
+        color: #fff;
       }
 
       .news-summary {
-        color: #555;
+        color: #a0a0a0;
         line-height: 1.5;
       }
     }

@@ -6,7 +6,7 @@ main {
   align-items: center;
   justify-content: center;
   padding: 20px;
-  background-color: #f0f4f8;
+  background-color: #121212;
 
   button {
     width: 100%;
@@ -15,20 +15,21 @@ main {
     font-weight: bold;
     border-radius: 5px;
     font-size: 1rem;
-    background-color: #f0f4f8;
+    background-color: #1e1e1e;
+    color: #fff;
     &:not(:last-child) {
       margin-bottom: 20px;
     }
     &.news {
-      color: #198754;
+      background-color: #198754;
       border: 1px solid #198754;
     }
     &.weather {
-      color: #0d6efd;
+      background-color: #0d6efd;
       border: 1px solid #0d6efd;
     }
     &.coutries {
-      color: #dc3545;
+      background-color: #dc3545;
       border: 1px solid #dc3545;
     }
   }
