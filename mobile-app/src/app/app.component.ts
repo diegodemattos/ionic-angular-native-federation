@@ -1,5 +1,6 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
+import { SharedStateService } from 'state-lib';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +10,9 @@ import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppComponent {
-  constructor() {}
+  constructor(private sharedStateService: SharedStateService) {
+    this.sharedStateService.setState({
+      defaultCountry: 'BR'
+    })
+  }
 }

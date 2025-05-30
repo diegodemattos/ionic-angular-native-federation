@@ -1,6 +1,11 @@
+import {
+  SHARED_DATA_PROVIDER,
+  SharedData,
+  SharedStateService,
+} from 'state-lib';
 import { NgFor, NgIf } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, Inject, Optional } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {
   IonBackButton,
@@ -15,8 +20,8 @@ import {
   IonTitle,
   IonToolbar,
   NavController,
+  IonFooter,
 } from '@ionic/angular/standalone';
-import { delay } from 'rxjs';
 
 @Component({
   selector: 'app-list',
@@ -35,27 +40,40 @@ import { delay } from 'rxjs';
     IonSpinner,
     IonLabel,
     IonButtons,
-    IonBackButton
+    IonBackButton,
+    IonFooter,
   ],
 })
 export class ListComponent {
   countries: any;
 
-  constructor(private http: HttpClient, private navCtrl: NavController, private route: ActivatedRoute) {}
+  constructor(
+    private http: HttpClient,
+    private navCtrl: NavController,
+    private route: ActivatedRoute,
+    @Optional()
+    @Inject(SHARED_DATA_PROVIDER)
+    public sharedData: SharedData,
+    private sharedStateService: SharedStateService
+  ) {}
 
   ionViewWillEnter() {
     this.http.get('https://restcountries.com/v3.1/all').subscribe({
       next: (data: any) => {
-        this.countries = data;
+        this.sharedStateService.getState().subscribe({
+          next: (state: SharedData) => {
+            this.countries = data.sort((a: any) => {
+              return a.cca2 === state['defaultCountry'] ? -1 : 1;
+            });
+          },
+        });
       },
     });
   }
 
   goToDetails(country: any) {
-    this.navCtrl.navigateForward(['../details', country.cca3],
-      {
-        relativeTo: this.route
-      }
-    ); // usando código ISO como param
+    this.navCtrl.navigateForward(['../details', country.cca3], {
+      relativeTo: this.route,
+    }); // usando código ISO como param
   }
 }

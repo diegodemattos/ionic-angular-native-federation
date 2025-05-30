@@ -24,3 +24,9 @@
     <ion-spinner name="crescent" class="spinner-center"></ion-spinner>
   </div>
 </ion-content>
+
+<ion-footer *ngIf="sharedData">
+  <ion-toolbar>
+    <ion-title>{{ sharedData['APP_NAME'] }}</ion-title>
+  </ion-toolbar>
+</ion-footer>

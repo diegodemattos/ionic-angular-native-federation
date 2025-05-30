@@ -1,6 +1,6 @@
 import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, Inject, Optional } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {
   IonButtons,
@@ -13,14 +13,19 @@ import {
   IonHeader,
   IonTitle,
   IonToolbar,
-  IonBackButton, IonSpinner } from '@ionic/angular/standalone';
+  IonBackButton,
+  IonSpinner,
+  IonFooter,
+} from '@ionic/angular/standalone';
 import { delay } from 'rxjs';
+import { SHARED_DATA_PROVIDER, SharedData } from 'state-lib';
 
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.scss'],
-  imports: [IonSpinner,
+  imports: [
+    IonSpinner,
     CommonModule,
     NgIf,
     IonHeader,
@@ -34,7 +39,8 @@ import { delay } from 'rxjs';
     IonCardSubtitle,
     IonCardContent,
     IonBackButton,
-    IonSpinner
+    IonSpinner,
+    IonFooter
   ],
 })
 export class DetailsComponent {
@@ -42,7 +48,13 @@ export class DetailsComponent {
   currency: string = '';
   language: string = '';
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) {}
+  constructor(
+    private route: ActivatedRoute,
+    private http: HttpClient,
+    @Optional()
+    @Inject(SHARED_DATA_PROVIDER)
+    public sharedData: SharedData
+  ) {}
 
   ionViewWillEnter() {
     const code = this.route.snapshot.paramMap.get('id');

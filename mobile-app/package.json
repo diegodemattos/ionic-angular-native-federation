@@ -34,6 +34,7 @@
     "es-module-shims": "^1.5.12",
     "ionicons": "^7.0.0",
     "rxjs": "~7.8.0",
+    "state-lib": "file:../libraries/dist/state-lib/state-lib-0.0.1.tgz",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
   },
