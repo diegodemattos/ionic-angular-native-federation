@@ -1,0 +1,23 @@
+{
+    "dataGroups": [
+      {
+        "name": "remote-modules",
+        "urls": [
+          "https://lustrous-marzipan-a737e3.netlify.app/remoteEntry.json",
+          "https://lustrous-marzipan-a737e3.netlify.app/*.js",
+          "https://grand-zabaione-86de14.netlify.app/remoteEntry.json",
+          "https://grand-zabaione-86de14.netlify.app/*.js",
+          "https://symphonious-chebakia-93397d.netlify.app/remoteEntry.json",
+          "https://symphonious-chebakia-93397d.netlify.app/*.js",
+          "https://prismatic-madeleine-635b69.netlify.app/remoteEntry.json",
+          "https://prismatic-madeleine-635b69.netlify.app/*.js"
+        ],
+        "cacheConfig": {
+          "strategy": "freshness",
+          "maxSize": 100,
+          "maxAge": "30d",
+          "timeout": "5s"
+        }
+      }
+    ]
+  }
